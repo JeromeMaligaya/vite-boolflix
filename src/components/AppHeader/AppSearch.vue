@@ -1,7 +1,4 @@
 <script>
-import AppSearch from './AppHeader/AppSearch.vue';
-
-
 export default {
   data(){
     return{
@@ -9,7 +6,7 @@ export default {
     }
   },
   components: {
-    AppSearch,
+
   },
   methods: {
 
@@ -19,7 +16,7 @@ export default {
 
 <template>
     <header>
-        <AppSearch />
+        
     </header>
 </template>
 
