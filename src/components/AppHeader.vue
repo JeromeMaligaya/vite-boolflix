@@ -1,6 +1,4 @@
 <script>
-import AppHeader from './components/AppHeader.vue';
-
 export default {
   data(){
     return{
@@ -8,7 +6,7 @@ export default {
     }
   },
   components: {
-    AppHeader
+
   },
   methods: {
 
@@ -17,10 +15,11 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
+    <header>
+        
+    </header>
 </template>
 
 <style lang="scss">
-  @use "./style/general.scss" as *;
 
 </style>
