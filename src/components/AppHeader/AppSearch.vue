@@ -40,7 +40,17 @@ export default {
 
 <template>
     <header>
-        
+        <input type="text" name="" id="" class="me-2" v-model="searchedFilm" @keyup.enter="getFilmsList(searchedFilm)">
+        <button type="button" @click="getFilmsList(searchedFilm)">SEND</button>
+        <ul>
+            <li v-for="(film, index) in listFilms" :key="index" class="card-film">
+                <p>film {{ index }}</p>
+                <p>title: {{ film.title }}</p>
+                <p>original-title: {{ film.original_title }}</p>
+                <p>language: {{ film.original_language }}</p>
+                <p>vote: {{ parseFloat(film.vote_average).toFixed(2) }}</p>
+            </li>
+        </ul>
     </header>
 </template>
 
