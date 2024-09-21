@@ -2,7 +2,7 @@
 export default {
   data(){
     return{
-
+        searchedFilm: "",
     }
   },
   components: {
@@ -16,7 +16,8 @@ export default {
 
 <template>
     <header>
-        
+        <input type="text" name="" id="" class="me-2" v-model="searchedFilm">
+        <button type="button">SEND</button>
     </header>
 </template>
 
