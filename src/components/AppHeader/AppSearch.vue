@@ -56,4 +56,13 @@ export default {
 
 <style lang="scss">
 
+    .card-film{
+        border: 2px black dashed;
+        margin-bottom: 20px;
+        p{
+            margin: 0;
+            padding: 0;
+        }
+    }
+
 </style>
