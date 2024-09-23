@@ -23,21 +23,21 @@ export default {
 </script>
 
 <template>
-  <li v-for="(film, index) in listFilms" :key="index" class="card-film">
-    <p>film {{ index }}</p>
-    <p>title: {{ film.title }}</p>
-    <p>original-title: {{ film.original_title }}</p>
-    <div class="lang-film">
-        <p>language: {{ film.original_language }}</p>
-        <img :src="store.getLanguageFlag(film.original_language)" :alt="film.original_language" />
+  <li v-for="(media, index) in store.listMedias" :key="index" class="card-media">
+    <p># {{ index }}</p>
+    <p>title: {{ media.title ? media.title : media.name  }}</p>
+    <p>original-title: {{ media.original_title ? media.original_title : media.original_name }}</p>
+    <div class="lang-media">
+        <p>language: {{ media.original_language }}</p>
+        <img :src="store.getLanguageFlag(media.original_language)" :alt="media.original_language" />
     </div>
-    <p>vote: {{ parseFloat(film.vote_average).toFixed(2) }}</p>
+    <p>vote: {{ parseFloat(media.vote_average).toFixed(2) }}</p>
   </li>
 </template>
 
 <style lang="scss" scoped>
   
-  .card-film{
+  .card-media{
         border: 2px black dashed;
         margin-bottom: 20px;
         p{
@@ -45,7 +45,7 @@ export default {
             padding: 0;
         }
 
-        .lang-film{
+        .lang-media{
             display: flex;
             align-items: center;
             gap: 5px;
