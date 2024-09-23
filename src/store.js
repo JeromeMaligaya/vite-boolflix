@@ -30,6 +30,11 @@ export const store = reactive({
             ja: "https://img.icons8.com/?size=100&id=KvglG3FkCenH&format=png&color=000000",
         },
 
-    ]
+    ],
+    getLanguageFlag(element) {
+        const flagFinded = store.languagesFLags.find(flag => flag[element]);
+
+        return flagFinded ? flagFinded[element] : 'https://img.icons8.com/?size=100&id=5tk64ASe7tdw&format=png&color=000000';
+    },
 
 })
