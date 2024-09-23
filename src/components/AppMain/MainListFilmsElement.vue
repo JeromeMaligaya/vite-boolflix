@@ -7,6 +7,12 @@ export default {
       store,
     }
   },
+  props:{
+    listFilms:{
+      type: Array,
+      Required: true
+    }
+  },
   components: {
 
   },
@@ -17,13 +23,13 @@ export default {
 </script>
 
 <template>
-  <li v-for="(film, index) in store.listFilms" :key="index" class="card-film">
+  <li v-for="(film, index) in listFilms" :key="index" class="card-film">
     <p>film {{ index }}</p>
     <p>title: {{ film.title }}</p>
     <p>original-title: {{ film.original_title }}</p>
     <div class="lang-film">
         <p>language: {{ film.original_language }}</p>
-        <img :src="getLanguageFlag(film.original_language)" :alt="film.original_language" />
+        <img :src="store.getLanguageFlag(film.original_language)" :alt="film.original_language" />
     </div>
     <p>vote: {{ parseFloat(film.vote_average).toFixed(2) }}</p>
   </li>
