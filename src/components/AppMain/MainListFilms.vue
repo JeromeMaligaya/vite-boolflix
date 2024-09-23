@@ -1,10 +1,11 @@
 <script>
 import MainListFilmsElement from './MainListFilmsElement.vue';
+import { store } from '../../store.js'
 
 export default {
   data(){
     return{
-
+      store
     }
   },
   components: {
@@ -22,6 +23,6 @@ export default {
   </ul>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>
