@@ -3,7 +3,10 @@ import { reactive } from "vue";
 export const store = reactive({
     searchedFilm: "",
     listFilms: [],
-    apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=ffdc9af86d5c7f48e60450138dfdd802",
+    listSeries: [],
+    listMedias: [],
+    apiUrlFilms: "https://api.themoviedb.org/3/search/movie?api_key=ffdc9af86d5c7f48e60450138dfdd802",
+    apiUrlSeries: "https://api.themoviedb.org/3/search/tv?api_key=ffdc9af86d5c7f48e60450138dfdd802",
     languagesFLags: [
         {
             en: "https://img.icons8.com/?size=100&id=xapj7ZzAUZKI&format=png&color=000000",
