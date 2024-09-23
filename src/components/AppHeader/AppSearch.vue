@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     getFilmsList(){
-        axios.get(store.apiUrl, {
+        axios.get(store.apiUrlFilms, {
             params: {
                 query: store.searchedFilm,
             }
@@ -34,6 +34,37 @@ export default {
         });
 
     },
+    getSeriesList(){
+        axios.get(store.apiUrlSeries, {
+            params: {
+                query: store.searchedFilm,
+            }
+        })
+        .then(response => {
+            // handle success
+            console.log('response', response);
+            store.listSeries = response.data.results;
+            console.log('listSeries', store.listSeries)
+
+            // listMedias assemble
+            store.listMedias = [...store.listFilms, ...store.listSeries]
+            console.log('listMedias', store.listMedias)
+
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .finally(function () {
+            // always executed
+        });
+
+    },
+
+    searchMedias(){
+        this.getFilmsList(),
+        this.getSeriesList()   
+    }
     
   }
 }
@@ -41,8 +72,8 @@ export default {
 
 <template>
     <header>
-        <input type="text" name="" id="" class="me-2" v-model="store.searchedFilm" @keyup.enter="getFilmsList(store.searchedFilm)">
-        <button type="button" @click="getFilmsList(store.searchedFilm)">SEND</button>
+        <input type="text" name="" id="" class="me-2" v-model="store.searchedFilm" @keyup.enter="searchMedias()">
+        <button type="button" @click="searchMedias()">SEND</button>
     </header>
 </template>
 
