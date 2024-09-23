@@ -1,4 +1,6 @@
 <script>
+import MainListFilms from './AppMain/MainListFilms.vue';
+
 export default {
   data(){
     return{
@@ -6,7 +8,7 @@ export default {
     }
   },
   components: {
-
+    MainListFilms,
   },
   methods: {
 
@@ -16,7 +18,7 @@ export default {
 
 <template>
     <main>
-        
+        <MainListFilms />
     </main>
 </template>
 
