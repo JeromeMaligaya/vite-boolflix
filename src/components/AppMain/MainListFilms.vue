@@ -5,7 +5,7 @@ import { store } from '../../store.js'
 export default {
   data(){
     return{
-      store
+      store,
     }
   },
   components: {
@@ -14,12 +14,22 @@ export default {
   methods: {
 
   },
+  computed: {
+    listFilms() {
+      return store.listFilms;
+    },
+  },
+  mounted(){
+    console.log('listFilms', this.listFilms)
+  }
 }
 </script>
 
 <template>
   <ul>
-    <MainListFilmsElement />
+    <MainListFilmsElement 
+      :listFilms="listFilms"
+    />
   </ul>
 </template>
 
