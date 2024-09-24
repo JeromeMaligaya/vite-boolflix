@@ -23,8 +23,8 @@ export default {
     },
     getStarsValue(vote) {
       const starNumber = Math.ceil(vote / 2); 
-      return '<i class="fa-solid fa-star"></i>'.repeat(starNumber); 
-    }
+      return vote ? '★'.repeat(starNumber) : '-'; 
+    },
   },
 }
 </script>
