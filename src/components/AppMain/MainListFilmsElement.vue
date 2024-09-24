@@ -17,13 +17,17 @@ export default {
 
   },
   methods: {
-
+    getImageUrl(mediaPath) {
+      const imageUrl = 'http://image.tmdb.org/t/p/w500/';
+      return mediaPath ? imageUrl + mediaPath : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9H39OhrjpTZZkqqCRVV3rzhrtGVpvi6IWKg&s';
+    },
   },
 }
 </script>
 
 <template>
   <li v-for="(media, index) in store.listMedias" :key="index" class="card-media">
+    <img :src="getImageUrl(media.poster_path)" :alt="media.title ? media.title : media.name">
     <p># {{ index }}</p>
     <p>title: {{ media.title ? media.title : media.name  }}</p>
     <p>original-title: {{ media.original_title ? media.original_title : media.original_name }}</p>
