@@ -23,5 +23,7 @@ export default {
 </template>
 
 <style lang="scss">
-
+  main{
+    padding: 10px 25px;
+  }
 </style>
