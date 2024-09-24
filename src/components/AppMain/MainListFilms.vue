@@ -14,21 +14,13 @@ export default {
   methods: {
 
   },
-  computed: {
-    listFilms() {
-      return store.listFilms;
-    },
-  },
-  mounted(){
-    console.log('listFilms', this.listFilms)
-  }
 }
 </script>
 
 <template>
   <ul>
     <MainListFilmsElement 
-      :listFilms="listFilms"
+      v-for="media in store.listMedias" :key="media.id" :media="media"
     />
   </ul>
 </template>

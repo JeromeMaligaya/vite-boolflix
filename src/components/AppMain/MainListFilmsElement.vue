@@ -8,8 +8,8 @@ export default {
     }
   },
   props:{
-    listFilms:{
-      type: Array,
+    media:{
+      type: Object,
       Required: true
     }
   },
@@ -30,9 +30,8 @@ export default {
 </script>
 
 <template>
-  <li v-for="(media, index) in store.listMedias" :key="index" class="card-media">
+  <li class="card-media">
     <img :src="getImageUrl(media.poster_path)" :alt="media.title ? media.title : media.name">
-    <p># {{ index }}</p>
     <p>title: {{ media.title ? media.title : media.name  }}</p>
     <p>original-title: {{ media.original_title ? media.original_title : media.original_name }}</p>
     <div class="lang-media">
