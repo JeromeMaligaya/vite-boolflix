@@ -70,13 +70,17 @@ export default {
 }
 </script>
 
-<template>
-    <header>
-        <input type="text" name="" id="" class="me-2" v-model="store.searchedFilm" @keyup.enter="searchMedias()">
-        <button type="button" @click="searchMedias()">SEND</button>
-    </header>
+<template> 
+    <div class="search-bar">
+        <input type="text" name="serch-media" id="search-media" v-model="store.searchedFilm" @keyup.enter="searchMedias()">
+        <button type="button" @click="searchMedias()">SEARCH</button>
+    </div>
 </template>
 
 <style lang="scss">
-
+    .search-bar{
+        #search-media{
+            margin-right: 5px;
+        }
+    }
 </style>

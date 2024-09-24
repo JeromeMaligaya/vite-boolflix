@@ -19,10 +19,21 @@ export default {
 
 <template>
     <header>
+        <h1>BOOLFLIX</h1>
         <AppSearch />
     </header>
 </template>
 
 <style lang="scss">
+   header{
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000;
 
+        h1{
+            color: red
+        }
+    }
 </style>
