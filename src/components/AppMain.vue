@@ -25,5 +25,6 @@ export default {
 <style lang="scss">
   main{
     padding: 10px 25px;
+    background-color: #1B1B1B;
   }
 </style>

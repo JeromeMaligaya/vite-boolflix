@@ -30,7 +30,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #000;
+        background-color: #1B1B1B;
 
         h1{
             color: red

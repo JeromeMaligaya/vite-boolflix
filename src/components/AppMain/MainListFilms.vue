@@ -27,6 +27,7 @@ export default {
 
 <style lang="scss">
   #list-media{
+    background-color: #1B1B1B;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
