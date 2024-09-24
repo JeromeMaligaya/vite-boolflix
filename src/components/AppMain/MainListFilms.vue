@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <ul>
+  <ul id="list-media">
     <MainListFilmsElement 
       v-for="media in store.listMedias" :key="media.id" :media="media"
     />
@@ -26,5 +26,9 @@ export default {
 </template>
 
 <style lang="scss">
-
+  #list-media{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
 </style>
