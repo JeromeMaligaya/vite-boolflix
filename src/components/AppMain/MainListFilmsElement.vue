@@ -1,10 +1,7 @@
 <script>
-import { store } from '../../store.js'
-
 export default {
   data(){
     return{
-      store,
       languagesFLags: [
         {
             en: "https://img.icons8.com/?size=100&id=xapj7ZzAUZKI&format=png&color=000000",
