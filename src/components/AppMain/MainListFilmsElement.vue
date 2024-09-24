@@ -60,25 +60,47 @@ export default {
 
 <template>
   <li class="card-media">
-    <img :src="getImageUrl(media.poster_path)" :alt="media.title ? media.title : media.name">
-    <p>title: {{ media.title ? media.title : media.name  }}</p>
-    <p>original-title: {{ media.original_title ? media.original_title : media.original_name }}</p>
-    <div class="lang-media">
-        <p>language: {{ media.original_language }}</p>
-        <img :src="getLanguageFlag(media.original_language)" :alt="media.original_language" />
+    <div class="img-box">
+      <img class="image-media" :src="getImageUrl(media.poster_path)" :alt="media.title ? media.title : media.name">
     </div>
-    <p>vote: {{ getStarsValue(media.vote_average) }}</p>
+    <div class="card-info">
+      <p>title: {{ media.title ? media.title : media.name  }}</p>
+      <p>original-title: {{ media.original_title ? media.original_title : media.original_name }}</p>
+      <div class="lang-media">
+          <p>language: {{ media.original_language }}</p>
+          <img :src="getLanguageFlag(media.original_language)" :alt="media.original_language" />
+      </div>
+      <p>vote: <span class="stars-vote">{{ getStarsValue(media.vote_average) }}</span></p>
+    </div>
   </li>
 </template>
 
 <style lang="scss" scoped>
   
   .card-media{
-        border: 2px black dashed;
-        margin-bottom: 20px;
+      flex-basis: calc((100%/6));
+      margin-bottom: 20px;
+
+      .img-box{
+        width: 100%;
+        height: 300px;
+
+        .image-media{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;      
+          }
+      }
+      .card-info{
+        width: 100%;
+        height: 300px;
+        padding: 15px 10px;
+
+        p, .lang-media{
+          margin-bottom: 10px;
+        }
         p{
-            margin: 0;
-            padding: 0;
+          padding: 0;
         }
 
         .lang-media{
@@ -90,5 +112,6 @@ export default {
                 width: 25px;
             }
         }
+      }
     }
 </style>
