@@ -80,37 +80,52 @@ export default {
   .card-media{
       flex-basis: calc((100%/6));
       margin-bottom: 20px;
+      position: relative;
 
+      &:hover {
+        .img-box {
+          opacity: 0;
+        }
+        .card-info {
+          opacity: 1;
+        }
+      }
       .img-box{
         width: 100%;
         height: 300px;
 
         .image-media{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;      
-          }
+          width: 100%;
+          height: 100%;
+          object-fit: cover;      
+        }
       }
       .card-info{
+        background-color: #000;
         width: 100%;
         height: 300px;
         padding: 15px 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
 
         p, .lang-media{
           margin-bottom: 10px;
         }
         p{
           padding: 0;
+          color: #fff;
         }
 
         .lang-media{
-            display: flex;
-            align-items: center;
-            gap: 5px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
 
-            img{
-                width: 25px;
-            }
+          img{
+              width: 25px;
+          }
         }
       }
     }
