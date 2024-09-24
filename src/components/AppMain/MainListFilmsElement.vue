@@ -21,6 +21,10 @@ export default {
       const imageUrl = 'http://image.tmdb.org/t/p/w500/';
       return mediaPath ? imageUrl + mediaPath : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9H39OhrjpTZZkqqCRVV3rzhrtGVpvi6IWKg&s';
     },
+    getStarsValue(vote) {
+      const starNumber = Math.ceil(vote / 2); 
+      return '<i class="fa-solid fa-star"></i>'.repeat(starNumber); 
+    }
   },
 }
 </script>
@@ -35,7 +39,7 @@ export default {
         <p>language: {{ media.original_language }}</p>
         <img :src="store.getLanguageFlag(media.original_language)" :alt="media.original_language" />
     </div>
-    <p>vote: {{ parseFloat(media.vote_average).toFixed(2) }}</p>
+    <p>vote: {{ getStarsValue(media.vote_average) }}</p>
   </li>
 </template>
 
